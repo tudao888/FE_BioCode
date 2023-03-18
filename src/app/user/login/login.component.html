@@ -8,18 +8,20 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Log In</h2>
 
-              <form>
+              <form [formGroup]="loginForm" (ngSubmit)="login()">
 
                 <div class="form-outline mb-2">
-                  <input type="text"  class="form-control form-control-lg" placeholder="username" />
+                  <input type="text"  class="form-control form-control-lg" placeholder="username" formControlName="username" />
+                  <p *ngIf="loginForm.get('username')?.errors?.['required'] && loginForm.get('username')?.['touched']" style="color: red">Vui lòng không để trống</p>
                 </div>
                 <br>
                 <div class="form-outline mb-2">
-                  <input type="password" class="form-control form-control-lg" placeholder="password" />
+                  <input type="password" class="form-control form-control-lg" placeholder="password" formControlName="password"/>
+                  <p *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.['touched']" style="color: red">Vui lòng không để trống</p>
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="submit"
                           class="btn btn-success btn-block btn-lg gradient-custom-4 form-control text-body">Login</button>
                 </div>
 
@@ -27,7 +29,6 @@
                                                                                         class="fw-bold text-body"><u>Register here</u></a></p>
 
               </form>
-
             </div>
           </div>
         </div>
