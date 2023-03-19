@@ -4,9 +4,7 @@
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="index.html">Trang chủ</a>
-      <a href="blog.html">Blog</a>
-      <a href="old_event.html">Các chương trình của chúng tôi</a>
-      <a href="about.html">Về chúng tôi</a>
+      <a routerLink="/showBlog">Blog</a>
       <a routerLink="/createPost">Tạo chương trình</a>
       <a href="donate.html">Donate</a>
       <a *ngIf="account !=null" (click)="logout()">LogOut</a>
@@ -17,7 +15,7 @@
       <h6 class="call_text"><img src="../assets/SwiPol-1.0.0/images/call-icon.png"><span class="padding_left_10"><a
         href="#">Call : +84 123456789
                      </a></span></h6>
-      <div class="logo"><a href="index.html"><img src="../assets/SwiPol-1.0.0/images/logo.png"></a></div>
+      <div class="logo"><a routerLink="/home"><img src="../assets/SwiPol-1.0.0/images/logo.png"></a></div>
       <h6 class="call_text"><img src="../assets/SwiPol-1.0.0/images/mail-icon.png"><span class="padding_left_10"><a
         href="">BioCode@gmail.com</a></span></h6>
       <div class="login_text">
@@ -50,19 +48,7 @@
           <h1 class="banner_taital">Góc Phố Xanh</h1>
           <h1 class="banner_taital_1">Ủy ban nhân dân thành phố Hà Nội</h1>
           <p class="banner_text">Bảo vệ góc phố thân thương</p>
-          <div class="call_box_section">
-            <div class="container">
-              <div class="call_box_left">
-                <div class="box_main">
-                  <div class="box_left">Tham gia ngay <br> Bảo vệ môi trường</div>
-                  <div class="box_left padding_top_10"><a href="#">+84 123456789</a></div>
-                </div>
-              </div>
-              <div class="call_box_right">
-                <div class="get_quote_bt"><a href="#">Ủng hộ</a></div>
-              </div>
-            </div>
-          </div>
+          <div class="read_bt"><a (click)="checkLogin()">Chi tiết</a></div>
         </div>
       </div>
       <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
@@ -91,7 +77,7 @@
             <p class="lorem_text">{{p.contentPost}}</p>
 
             <div class="readmore_bt">
-              <a [routerLink]="['/event',p.id]">Chi tiết</a>
+              <a [routerLink]="['/event',p.id]" (click)="checkLogin()" >Chi tiết</a>
             </div>
           </div>
         </div>

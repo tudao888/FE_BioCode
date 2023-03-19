@@ -17,6 +17,7 @@ const routes: Routes = [
   {path:"event/:id", component: EventDetailComponent},
   {path:"showBlog", component: ShowBlogComponent},
   {path:"createBlog", component: CreateBlogComponent},
+  // {path:"", component: HomeComponent},
 ]
 
 @NgModule({

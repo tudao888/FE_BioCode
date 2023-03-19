@@ -20,7 +20,7 @@ import { CreateBlogComponent } from './user/create-blog/create-blog.component';
     LoginComponent,
     HomeComponent,
     CreatePostComponent,
-    EventDetailComponent
+    EventDetailComponent,
     ShowBlogComponent,
     CreateBlogComponent
   ],

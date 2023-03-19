@@ -27,7 +27,7 @@ export class CreatePostComponent implements OnInit {
 
 
   createPost() {
-    this.today = new Date().toISOString().split("T")[0];
+    this.today = new Date().toISOString().split('T', 1)[0];
     const postCreate = new PostCreate(
       this.formCreatePost.value.title,
       this.formCreatePost.value.contentPost,

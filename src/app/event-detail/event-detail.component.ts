@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PostService} from "../service/post/post.service";
 import {Post} from "../model/Post";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AccountService} from "../service/account/account.service";
 import {Vote} from "../model/Vote";
 import {Account} from "../model/Account";
@@ -13,7 +13,7 @@ import Swal from "sweetalert2";
   styleUrls: ['./event-detail.component.css']
 })
 export class EventDetailComponent implements OnInit {
-  constructor(private postService: PostService, private route: ActivatedRoute, private accountService: AccountService) {
+  constructor(private postService: PostService, private route: ActivatedRoute, private accountService: AccountService, private router:Router) {
   }
 
   checkVote: boolean = true;
@@ -37,7 +37,7 @@ export class EventDetailComponent implements OnInit {
     })
   }
 
-  createVote() {
+  createVote1() {
     const vote = new Vote(this.account, this.post)
     this.postService.saveVote(vote).subscribe(res => {
       Swal.fire('Done!', 'Voted', 'success');
@@ -47,5 +47,10 @@ export class EventDetailComponent implements OnInit {
 
       })
     })
+  }
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/login'])
   }
 }

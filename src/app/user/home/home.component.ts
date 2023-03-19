@@ -36,4 +36,13 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  checkLogin() {
+    if (this.accountService.getAccountToken() != null) {
+      return;
+    }
+    else {
+      alert("Cần đăng nhập để xem chi tiết")
+    }
+  }
+
 }
