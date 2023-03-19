@@ -23,8 +23,8 @@ export class AccountService implements OnInit {
     return this.http.post<AccountToken>("http://localhost:8080/login", account)
   }
 
-  findById(id: number): Observable<any> {
-    return this.http.get<any>(`http://localhost:8080/accounts/${id}`)
+  findById(id: number): Observable<Account> {
+    return this.http.get<Account>(`http://localhost:8080/accounts/${id}`)
   }
 
   setToken(token: string) {

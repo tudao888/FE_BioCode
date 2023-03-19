@@ -55,22 +55,19 @@ export class LoginComponent implements OnInit {
             if (accountToken?.roles[i].id == 1) {
               this.router.navigate(["/admin"]);
             }
+            else {
+              this.router.navigate(["/home"]);
+            }
           }
-          this.router.navigate(["/home"]);
         } else {
           Swal.fire(
             ' ',
-            '<h2 style="color: red; font-size: 32px">The account has been banned</h2>',
+            '<h2 style="color: red; font-size: 32px">Sai tài khoản hoặc mật khẩu</h2>',
             'error'
           )
           this.router.navigate(['/login']);
         }
       }
     )
-  }
-
-  logout() {
-    localStorage.clear();
-    this.router.navigate(['/login'])
   }
 }
