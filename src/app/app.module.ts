@@ -8,6 +8,7 @@ import { HomeComponent } from './user/home/home.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { CreatePostComponent } from './user/create-post/create-post.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CreatePostComponent } from './user/create-post/create-post.component';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    EventDetailComponent
   ],
     imports: [
         BrowserModule,
