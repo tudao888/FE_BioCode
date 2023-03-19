@@ -8,8 +8,10 @@ import { HomeComponent } from './user/home/home.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { CreatePostComponent } from './user/create-post/create-post.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 import { ShowBlogComponent } from './user/show-blog/show-blog.component';
 import { CreateBlogComponent } from './user/create-blog/create-blog.component';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { CreateBlogComponent } from './user/create-blog/create-blog.component';
     LoginComponent,
     HomeComponent,
     CreatePostComponent,
+    EventDetailComponent
     ShowBlogComponent,
     CreateBlogComponent
   ],
