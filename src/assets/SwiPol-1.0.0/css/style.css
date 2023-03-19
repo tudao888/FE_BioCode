@@ -341,7 +341,7 @@ button {
 	float: left;
 	padding-bottom: 85px;
 	padding-top: 120px;
-	background-image: url("https://static.hieuluat.vn/uploaded/Images/Original/2023/01/18/bao-ve-moi-truong-la-gi_1801083959.jpg");
+	background-image: url(../images/banner-bg.png);
 	height: auto;
 	background-size: 100%;
 	background-repeat: no-repeat;

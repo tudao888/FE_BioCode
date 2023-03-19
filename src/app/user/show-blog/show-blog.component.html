@@ -1,17 +1,12 @@
-
+<body>
 <!--header section start -->
 <div class="header_section">
   <div class="container-fluid">
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="index.html">Trang chủ</a>
-      <a href="blog.html">Blog</a>
-      <a href="old_event.html">Các chương trình của chúng tôi</a>
-      <a href="about.html">Về chúng tôi</a>
-      <a routerLink="/createPost">Tạo chương trình</a>
+      <a routerLink="/home">Trang chủ</a>
+      <a routerLink="/showBlog">Blog</a>
       <a href="donate.html">Donate</a>
-      <a *ngIf="account !=null" (click)="logout()" >LogOut</a>
-      <a *ngIf="!(account !=null)" routerLink="/login">LogIn</a>
     </div>
     <div class="header_taital_main">
       <span class="toggle_icon" onclick="openNav()"><img src="../assets/SwiPol-1.0.0/images/toggle-icon.png"></span>
@@ -22,6 +17,11 @@
         href="">BioCode@gmail.com</a></span></h6>
       <div class="login_text">
         <ul>
+          <li><a href="#"><img src="../assets/SwiPol-1.0.0/images/user-icon.png" onclick="myFunction()" class="dropbtn"></a></li>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#login">Login</a>
+            <a href="#logout">Logout</a>
+          </div>
           <li><a href="#"><img src="../assets/SwiPol-1.0.0/images/search-icon.png"></a></li>
         </ul>
       </div>
@@ -29,41 +29,6 @@
   </div>
 </div>
 <!-- header section end -->
-<!-- banner section start -->
-<div class="banner_section layout_padding" >
-  <div class="container">
-    <div id="main_slider" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <h1 class="banner_taital" style="display:inline-block">Ngày Xanh</h1>
-          <h1 class="banner_taital_1">Hiệp Hội Bảo Vệ Môi Trường</h1>
-          <p class="banner_text"> Chung tay bảo vệ môi trường sống của chính chúng ta</p>
-          <div class="read_bt"><a href="#">Chi tiết</a></div>
-        </div>
-        <div class="carousel-item">
-          <h1 class="banner_taital">Bảo Vệ Bờ Biển</h1>
-          <h1 class="banner_taital_1">Tổ chức bảo vệ môi trường biển Việt Nam</h1>
-          <p class="banner_text">Cùng góp sức làm sạch bờ biển quê hương</p>
-          <div class="read_bt"><a href="#">Chi tiết</a></div>
-        </div>
-        <div class="carousel-item">
-          <h1 class="banner_taital">Góc Phố Xanh</h1>
-          <h1 class="banner_taital_1">Ủy ban nhân dân thành phố Hà Nội</h1>
-          <p class="banner_text">Bảo vệ góc phố thân thương</p>
-          <div class="read_bt"><a href="#">Chi tiết</a></div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-        <i class="fa fa-angle-left"></i>
-      </a>
-      <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-        <i class="fa fa-angle-right"></i>
-      </a>
-    </div>
-  </div>
-</div>
-<!-- banner section end -->
-<!-- call_box section start -->
 <div class="call_box_section">
   <div class="container">
     <div class="call_box_left">
@@ -77,25 +42,19 @@
     </div>
   </div>
 </div>
-<!-- call_box section end -->
 <!-- layout_bg section start -->
-
-<div class="layout_bg" *ngFor="let p of listPost">
+<div class="layout_bg" *ngFor="let b of listBlog">
   <div class="services_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <div class="image_1"><img src="{{p.image}}" style="height: 420px; width: 350px"></div>
+          <div class="image_1"><img src="{{b.image}}" style="height: 420px; width: 350px"></div>
         </div>
         <div class="col-md-8">
           <div class="services_box">
-            <h3 class="pool_text">{{p.title}}</h3>
-            <p class="arial_text" style="color: #1b1e21">{{p.startAt}} - {{p.endAt}}</p>
-            <p class="lorem_text">{{p.contentPost}}</p>
-
-            <div class="readmore_bt">
-              <a href="#">Chi tiết</a>
-            </div>
+            <h4 class="pool_text">{{b.title}}</h4>
+            <p class="lorem_text">Người đăng:  {{b.account.username}}</p>
+            <p class="lorem_text">{{b.contentBlog}}</p>
           </div>
         </div>
       </div>
@@ -139,5 +98,47 @@
       Templates</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a> </p>
   </div>
 </div>
+<!-- copyright section end -->
+<!-- Javascript files-->
+<script src="../assets/SwiPol-1.0.0/js/jquery.min.js"></script>
+<script src="../assets/SwiPol-1.0.0/js/popper.min.js"></script>
+<script src="../assets/SwiPol-1.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/SwiPol-1.0.0/js/jquery-3.0.0.min.js"></script>
+<script src="../assets/SwiPol-1.0.0/js/plugin.js"></script>
+<!-- sidebar -->
+<script src="../assets/SwiPol-1.0.0/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../assets/SwiPol-1.0.0/js/custom.js"></script>
+<!-- javascript -->
+<script src="js/owl.carousel.js"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+  }
 
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+</script>
+<script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
 
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+</script>
+</body>
